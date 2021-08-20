@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private PlayerInput playerInput;
 
+    [Header("Properties")]
     [SerializeField]
     private float mouseVelocity = 1.0f;
     [SerializeField]
@@ -19,6 +20,14 @@ public class PlayerController : MonoBehaviour
     private GameObject rotationObject;
     [SerializeField]
     private float rotationTime;
+
+    [Header("References")]
+    [SerializeField]
+    private MeshRenderer PinkyObject;
+    [SerializeField]
+    private MeshRenderer FucsiaObject;
+    [SerializeField]
+    private MeshRenderer GialloObject;
     
     private bool _canRotate;
 
@@ -36,6 +45,8 @@ public class PlayerController : MonoBehaviour
         
         playerInput.actions["RotateLeft"].performed += RotateLeft;
         playerInput.actions["RotateRight"].performed += RotateRight;
+        
+        ChangeWeaponTransparency(currentState, 1.0f);
     }
 
     public void OnLook(InputValue value)
@@ -54,6 +65,7 @@ public class PlayerController : MonoBehaviour
         if (_canRotate)
         {
             _canRotate = false;
+            ChangeWeaponTransparency(currentState, 0.0f);
             currentState = GetNextLeft(currentState);
             PerformRotation();
         }
@@ -64,6 +76,7 @@ public class PlayerController : MonoBehaviour
         if (_canRotate)
         {
             _canRotate = false;
+            ChangeWeaponTransparency(currentState, 0.0f);
             currentState = GetNextRight(currentState);
             PerformRotation();
         }
@@ -75,8 +88,19 @@ public class PlayerController : MonoBehaviour
         var rotation = rotationObject.transform.rotation.eulerAngles;
         rotation.y = rotationY;
         rotationObject.transform.DORotate(rotation, rotationTime).OnComplete(() => { _canRotate = true; });
+        ChangeWeaponTransparency(currentState, 1.0f);
     }
 
+    private void ChangeWeaponTransparency(RotationWeapon current, float alpha)
+    {
+        var weaponObject = GetWeaponMeshRenderer(current);
+        foreach (var weaponObjectMaterial in weaponObject.materials)
+        {
+            var color = weaponObjectMaterial.color;
+            color.a = alpha;
+            weaponObjectMaterial.DOColor(color, rotationTime);
+        }
+    }
 
     private RotationWeapon GetGivenRotation(Quaternion rotation)
     {
@@ -119,6 +143,17 @@ public class PlayerController : MonoBehaviour
             case RotationWeapon.GIALLO: return 90.0f;
             case RotationWeapon.FUCSIA: return 0.0f;
             case RotationWeapon.PINKY: return 270.0f;
+            default: goto case RotationWeapon.FUCSIA;
+        }
+    }
+
+    private MeshRenderer GetWeaponMeshRenderer(RotationWeapon current)
+    {
+        switch (current)
+        {
+            case RotationWeapon.GIALLO: return GialloObject;
+            case RotationWeapon.FUCSIA: return FucsiaObject;
+            case RotationWeapon.PINKY: return PinkyObject;
             default: goto case RotationWeapon.FUCSIA;
         }
     }
