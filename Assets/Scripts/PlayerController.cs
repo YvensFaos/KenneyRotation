@@ -1,4 +1,7 @@
+using System;
+using System.Collections;
 using DG.Tweening;
+using Lean.Pool;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -20,21 +23,41 @@ public class PlayerController : MonoBehaviour
     private GameObject rotationObject;
     [SerializeField]
     private float rotationTime;
+    [SerializeField]
+    private float shootTime;
+    [SerializeField]
+    private float shootForce;
 
     [Header("References")]
     [SerializeField]
-    private MeshRenderer PinkyObject;
+    private MeshRenderer pinkyObject;
     [SerializeField]
-    private MeshRenderer FucsiaObject;
+    private MeshRenderer fucsiaObject;
     [SerializeField]
-    private MeshRenderer GialloObject;
+    private MeshRenderer gialloObject;
+
+    [Header("Bullet & Cannons References")]
+    [SerializeField]
+    private GameObject pinkyCannon;
+    [SerializeField]
+    private Rigidbody pinkyBullet;
+    [SerializeField]
+    private GameObject fucsiaCannon;
+    [SerializeField]
+    private Rigidbody fucsiaBullet;
+    [SerializeField]
+    private GameObject gialloCannon;
+    [SerializeField]
+    private Rigidbody gialloBullet;
     
     private bool _canRotate;
+    private bool _canShoot;
 
     private void OnDestroy()
     {
         playerInput.actions["RotateLeft"].performed -= RotateLeft;
         playerInput.actions["RotateRight"].performed -= RotateRight;
+        playerInput.actions["Fire"].performed -= Fire;
     }
 
     private void Start()
@@ -42,10 +65,12 @@ public class PlayerController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         currentState = GetGivenRotation(transform.rotation);
         _canRotate = true;
+        _canShoot = true;
         
         playerInput.actions["RotateLeft"].performed += RotateLeft;
         playerInput.actions["RotateRight"].performed += RotateRight;
-        
+        playerInput.actions["Fire"].performed += Fire;
+
         ChangeWeaponTransparency(currentState, 1.0f);
     }
 
@@ -58,6 +83,44 @@ public class PlayerController : MonoBehaviour
         newPosition.x = Mathf.Clamp(newPosition.x, minBounds.x, maxBounds.x);
         newPosition.y = Mathf.Clamp(newPosition.y, minBounds.y, maxBounds.y);
         selfTransform.position = newPosition;
+    }
+
+    private void Fire(InputAction.CallbackContext callback)
+    {
+        if (_canRotate && _canShoot)
+        {
+            GameObject cannon;
+            Rigidbody bullet;
+
+            switch (currentState)
+            {
+                case RotationWeapon.PINKY:
+                    cannon = pinkyCannon;
+                    bullet = pinkyBullet;
+                    break;
+                case RotationWeapon.FUCSIA:
+                    cannon = fucsiaCannon;
+                    bullet = fucsiaBullet;
+                    break;
+                case RotationWeapon.GIALLO:
+                    cannon = gialloCannon;
+                    bullet = gialloBullet;
+                    break;
+                default:
+                    goto case RotationWeapon.FUCSIA;
+            }
+
+            var bulletRigidbody = LeanPool.Spawn(bullet, cannon.transform.position, Quaternion.identity);
+            bulletRigidbody.AddForce(Vector3.back * shootForce);
+            _canShoot = false;
+            StartCoroutine(ShootTimer());
+        }
+    }
+
+    private IEnumerator ShootTimer()
+    {
+        yield return new WaitForSeconds(shootTime);
+        _canShoot = true;
     }
 
     private void RotateLeft(InputAction.CallbackContext callback)
@@ -151,9 +214,9 @@ public class PlayerController : MonoBehaviour
     {
         switch (current)
         {
-            case RotationWeapon.GIALLO: return GialloObject;
-            case RotationWeapon.FUCSIA: return FucsiaObject;
-            case RotationWeapon.PINKY: return PinkyObject;
+            case RotationWeapon.GIALLO: return gialloObject;
+            case RotationWeapon.FUCSIA: return fucsiaObject;
+            case RotationWeapon.PINKY: return pinkyObject;
             default: goto case RotationWeapon.FUCSIA;
         }
     }

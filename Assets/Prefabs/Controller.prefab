@@ -251,7 +251,18 @@ MonoBehaviour:
   maxBounds: {x: 4, y: 3.4}
   currentState: 0
   rotationObject: {fileID: 1920972517442054043}
-  rotationTime: 0.4
+  rotationTime: 0.2
+  shootTime: 0.3
+  shootForce: 200
+  pinkyObject: {fileID: 119440102568894719}
+  fucsiaObject: {fileID: 119440101302460512}
+  gialloObject: {fileID: 119440100857685566}
+  pinkyCannon: {fileID: 5996222947916876966}
+  pinkyBullet: {fileID: 671521106073786363, guid: 3a2635a163082496f84a87b6c93a1ab9, type: 3}
+  fucsiaCannon: {fileID: 5382462754526941637}
+  fucsiaBullet: {fileID: 6599818597699758977, guid: 7da9f142a5aca4a40acef9e697171349, type: 3}
+  gialloCannon: {fileID: 8062228509929861179}
+  gialloBullet: {fileID: -6884712084818466117, guid: 0ed349fc4f0ca49c6a43e5d1567f9511, type: 3}
 --- !u!114 &5838442226165843685
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -394,6 +405,7 @@ Transform:
   m_LocalScale: {x: 0.2559731, y: 1.788771, z: 0.25597316}
   m_Children:
   - {fileID: 1898932477482102681}
+  - {fileID: 3148332422964046787}
   m_Father: {fileID: 1289009154930490657}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -515,6 +527,7 @@ Transform:
   m_LocalScale: {x: 0.2559731, y: 1.788771, z: 0.25597316}
   m_Children:
   - {fileID: 7921107623831978058}
+  - {fileID: 3137791697173104899}
   m_Father: {fileID: 1289009154930490657}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 90}
@@ -602,6 +615,7 @@ Transform:
   m_LocalScale: {x: 0.2559731, y: 1.788771, z: 0.25597316}
   m_Children:
   - {fileID: 3252032948706373002}
+  - {fileID: 6673461326785606761}
   m_Father: {fileID: 1289009154930490657}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 90}
@@ -808,6 +822,66 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &5382462754526941637
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3148332422964046787}
+  m_Layer: 0
+  m_Name: FucsiaCannon
+  m_TagString: Untagged
+  m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3148332422964046787
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5382462754526941637}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.0393, z: -0.408}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1289009154094930703}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5996222947916876966
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6673461326785606761}
+  m_Layer: 0
+  m_Name: PinkyCannon
+  m_TagString: Untagged
+  m_Icon: {fileID: -5938655980376293919, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6673461326785606761
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5996222947916876966}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.043, z: -0.2039}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1289009155496074128}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6580348462566598176
 GameObject:
   m_ObjectHideFlags: 0
@@ -983,3 +1057,33 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &8062228509929861179
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3137791697173104899}
+  m_Layer: 0
+  m_Name: GialloCannon
+  m_TagString: Untagged
+  m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3137791697173104899
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8062228509929861179}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.005, y: 0.043, z: -0.6732}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1289009154590039377}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
