@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: TrainingSkyboxMaterial
+  m_Shader: {fileID: -6465566751694194690, guid: 60344734d656743a1abda0af00d29c1a, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - BackIntensity: 0.1
+    - NoiseCellIntensity: 9.32
+    - NoiseIntensity: 8.31
+    - NoisePower: 6.07
+    - NoiseVelocity: 5
+    - RectangleSize: 0.95
+    - SubNoiseCellIntensity: 22.99
+    - SubNoisePower: 6.98
+    - SubNoiseVelocity: -5
+    m_Colors:
+    - BackColor: {r: 1023.9999, g: 1023.9999, b: 1023.9999, a: 1}
+    - MainColor: {r: 0.015686275, g: 0.36078432, b: 1.7803922, a: 1}
+    - NoiseColor: {r: 0, g: 766.9961, b: 722.82355, a: 1}
+    - NoiseDirection: {r: 1, g: 0, b: 0, a: 0}
+    - Rectangle: {r: 0.5, g: 0.5, b: 0, a: 0}
+    - SubNoiseColor: {r: 899.51373, g: 184.72157, b: 84.329414, a: 1}
+    - Tiling: {r: 15, g: 15, b: 0, a: 0}
+  m_BuildTextureStacks: []

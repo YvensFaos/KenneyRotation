@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="$PROJECT_DIR$" t="IncludeRecursive">
+      <e p="Assembly-CSharp-firstpass.csproj" t="IncludeRecursive" />
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="Materials" t="Include">
+          <e p="AlwaysOnTop.shader" t="Include" />
+        </e>
+        <e p="Models" t="Include">
+          <e p="crosshairpack_kenney" t="Include">
+            <e p="license.txt" t="Include" />
+            <e p="Size.txt" t="Include" />
+          </e>
+          <e p="foodKit_v1.2" t="Include">
+            <e p="license.txt" t="Include" />
+          </e>
+          <e p="gameicons" t="Include">
+            <e p="license.txt" t="Include" />
+            <e p="Spritesheet" t="Include">
+              <e p="sheet_black1x.xml" t="Include" />
+              <e p="sheet_black2x.xml" t="Include" />
+              <e p="sheet_white1x.xml" t="Include" />
+              <e p="sheet_white2x.xml" t="Include" />
+            </e>
+          </e>
+          <e p="gameicons-expansion" t="Include">
+            <e p="Game icons (base)" t="Include">
+              <e p="license.txt" t="Include" />
+              <e p="Spritesheet" t="Include">
+                <e p="sheet_black1x.xml" t="Include" />
+                <e p="sheet_black2x.xml" t="Include" />
+                <e p="sheet_white1x.xml" t="Include" />
+                <e p="sheet_white2x.xml" t="Include" />
+              </e>
+            </e>
+            <e p="license.txt" t="Include" />
+            <e p="Spritesheet" t="Include">
+              <e p="sheet_black1x.xml" t="Include" />
+              <e p="sheet_black2x.xml" t="Include" />
+              <e p="sheet_colored1x.xml" t="Include" />
+              <e p="sheet_colored2x.xml" t="Include" />
+              <e p="sheet_white1x.xml" t="Include" />
+              <e p="sheet_white2x.xml" t="Include" />
+            </e>
+          </e>
+          <e p="kenney_blasterkit" t="Include">
+            <e p="license.txt" t="Include" />
+          </e>
+          <e p="kenney_impactsounds" t="Include">
+            <e p="license.txt" t="Include" />
+          </e>
+          <e p="kenney_interfacesounds" t="Include">
+            <e p="license.txt" t="Include" />
+          </e>
+          <e p="kenney_voiceoverfighter" t="Include">
+            <e p="license.txt" t="Include" />
+          </e>
+        </e>
+        <e p="Plugins" t="Include">
+          <e p="Demigiant" t="Include">
+            <e p="DOTween" t="Include">
+              <e p="Modules" t="Include">
+                <e p="DOTweenModuleAudio.cs" t="Include" />
+                <e p="DOTweenModuleEPOOutline.cs" t="Include" />
+                <e p="DOTweenModulePhysics.cs" t="Include" />
+                <e p="DOTweenModulePhysics2D.cs" t="Include" />
+                <e p="DOTweenModuleSprite.cs" t="Include" />
+                <e p="DOTweenModuleUI.cs" t="Include" />
+                <e p="DOTweenModuleUnityVersion.cs" t="Include" />
+                <e p="DOTweenModuleUtils.cs" t="Include" />
+              </e>
+              <e p="readme.txt" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Scripts" t="Include">
+          <e p="PlayerController.cs" t="Include" />
+          <e p="RotationWeapon.cs" t="Include" />
+        </e>
+      </e>
+      <e p="KenneyRotation.sln" t="IncludeFlat" />
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="Temp/Bin" t="ExcludeRecursive" />
+    </e>
+    <e p="$USER_HOME$/Library/Caches/Rider2019.3/extResources" t="IncludeRecursive" />
+    <e p="$USER_HOME$/Library/Caches/Rider2019.3/resharper-host/local/Transient/ReSharperHost/v193/SolutionCaches/_KenneyRotation.-103534017.00" t="ExcludeRecursive" />
+  </component>
+</project>
