@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 9121041185509905305}
   - component: {fileID: -6884712084818466117}
   - component: {fileID: 8389704643977774640}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GialloBullet
   m_TagString: Giallo
   m_Icon: {fileID: 0}

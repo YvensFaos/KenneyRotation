@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8054125736509374529}
   - component: {fileID: 6599818597699758977}
   - component: {fileID: -7613855269517379778}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FucsiaBullet
   m_TagString: Fucsia
   m_Icon: {fileID: 0}

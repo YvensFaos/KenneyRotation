@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1165973249040042467}
   - component: {fileID: 671521106073786363}
   - component: {fileID: -9218949976504874593}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PinkyBullet
   m_TagString: Pinky
   m_Icon: {fileID: 0}

@@ -120,8 +120,10 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
+          <e p="GameLogic.cs" t="Include" />
           <e p="PlayerController.cs" t="Include" />
           <e p="RotationWeapon.cs" t="Include" />
+          <e p="TargetController.cs" t="Include" />
         </e>
       </e>
       <e p="KenneyRotation.sln" t="IncludeFlat" />
